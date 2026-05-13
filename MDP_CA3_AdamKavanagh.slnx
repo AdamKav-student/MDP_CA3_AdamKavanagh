@@ -3,5 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="MDP_CA3_AdamKavanagh/MDP_CA3_AdamKavanagh.vcxproj" />
+  <Project Path="Client/Client.vcxproj" />
+  <Project Path="Core/Core.vcxproj" />
+  <Project Path="Server/Server.vcxproj" />
 </Solution>
