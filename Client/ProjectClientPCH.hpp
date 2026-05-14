@@ -1,4 +1,4 @@
-#include "RoboCatShared.hpp"
+#include "SharedLibrary.hpp"
 
 #include "SFML\Graphics.hpp"
 
@@ -10,9 +10,9 @@
 #include "RenderManager.hpp"
 #include "WindowManager.hpp"
 
-#include "RoboCatClient.hpp"
-#include "MouseClient.hpp"
-#include "YarnClient.hpp"
+#include "ProjectClient.hpp"
+#include "TankClient.hpp"
+#include "ProjectileClient.hpp"
 
 #include "HUD.hpp"
 

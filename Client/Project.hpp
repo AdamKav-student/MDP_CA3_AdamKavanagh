@@ -1,4 +1,4 @@
-class RoboCatClient : public RoboCat
+class ProjectClient : public Project
 {
 public:
 	static	GameObjectPtr	StaticCreate() { return GameObjectPtr(new RoboCatClient()); }
@@ -12,7 +12,7 @@ public:
 	void DoClientSidePredictionAfterReplicationForRemoteCat(uint32_t inReadState);
 
 protected:
-	RoboCatClient();
+	ProjectClient();
 
 
 private:

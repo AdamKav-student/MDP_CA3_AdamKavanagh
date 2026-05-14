@@ -1,4 +1,4 @@
-class YarnClient : public Yarn
+class ProjectileClient : public Projectile
 {
 public:
 	static	GameObjectPtr	StaticCreate() { return GameObjectPtr(new YarnClient()); }
@@ -6,7 +6,7 @@ public:
 	virtual void		Read(InputMemoryBitStream& inInputStream) override;
 
 protected:
-	YarnClient();
+	ProjectileClient();
 
 private:
 

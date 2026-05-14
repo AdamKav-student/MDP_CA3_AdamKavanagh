@@ -1,10 +1,10 @@
-class MouseClient : public Mouse
+class TankClient : public Tank
 {
 public:
 	static	GameObjectPtr	StaticCreate() { return GameObjectPtr(new MouseClient()); }
 
 protected:
-	MouseClient();
+	TankClient();
 
 private:
 
