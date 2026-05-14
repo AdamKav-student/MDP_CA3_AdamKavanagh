@@ -126,22 +126,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="ByteSwap.hpp" />
-    <ClInclude Include="MemoryBitStream.hpp" />
-    <ClInclude Include="Player.hpp" />
-    <ClInclude Include="TCPSocket.hpp" />
-    <ClInclude Include="UDPSocket.hpp" />
-    <ClInclude Include="World.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ByteSwap.cpp" />
-    <ClCompile Include="MemoryBitStream.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="TCPSocket.cpp" />
-    <ClCompile Include="UDPSocket.cpp" />
-    <ClCompile Include="World.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
