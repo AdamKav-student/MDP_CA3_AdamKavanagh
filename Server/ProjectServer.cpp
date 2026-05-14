@@ -13,7 +13,7 @@ void ProjectServerPCH::HandleDying()
 
 void ProjectServerPCH::Update()
 {
-	RoboCat::Update();
+	Project::Update();
 
 	Vector3 oldLocation = GetLocation();
 	Vector3 oldVelocity = GetVelocity();
@@ -52,8 +52,8 @@ void ProjectServerPCH::Update()
 
 	HandleShooting();
 
-	if (!RoboMath::Is2DVectorEqual(oldLocation, GetLocation()) ||
-		!RoboMath::Is2DVectorEqual(oldVelocity, GetVelocity()) ||
+	if (!ProjectMath::Is2DVectorEqual(oldLocation, GetLocation()) ||
+		!ProjectMath::Is2DVectorEqual(oldVelocity, GetVelocity()) ||
 		oldRotation != GetRotation())
 	{
 		NetworkManagerServer::sInstance->SetStateDirty(GetNetworkId(), ECRS_Pose);

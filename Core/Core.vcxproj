@@ -19,11 +19,65 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AckRange.hpp" />
+    <ClInclude Include="ByteSwap.hpp" />
+    <ClInclude Include="DeliveryNotificationManager.hpp" />
     <ClInclude Include="Engine.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="GameObjectRegistry.hpp" />
+    <ClInclude Include="InFlightPacket.hpp" />
+    <ClInclude Include="InputAction.hpp" />
+    <ClInclude Include="InputState.hpp" />
+    <ClInclude Include="LinkingContext.hpp" />
+    <ClInclude Include="MemoryBitStream.hpp" />
+    <ClInclude Include="Move.hpp" />
+    <ClInclude Include="MoveList.hpp" />
+    <ClInclude Include="NetworkManager.hpp" />
+    <ClInclude Include="Project.hpp" />
+    <ClInclude Include="Projectile.hpp" />
+    <ClInclude Include="ProjectMath.hpp" />
+    <ClInclude Include="ProjectPCH.hpp" />
+    <ClInclude Include="ReplicationCommand.hpp" />
+    <ClInclude Include="ScoreBoardManager.hpp" />
     <ClInclude Include="SharedLibrary.hpp" />
+    <ClInclude Include="SocketAddress.hpp" />
+    <ClInclude Include="SocketAddressFactory.hpp" />
+    <ClInclude Include="SocketUtility.hpp" />
+    <ClInclude Include="StringUtility.hpp" />
+    <ClInclude Include="Tank.hpp" />
+    <ClInclude Include="TCPSocket.hpp" />
+    <ClInclude Include="Timing.hpp" />
+    <ClInclude Include="TransmissionData.hpp" />
+    <ClInclude Include="UDPSocket.hpp" />
+    <ClInclude Include="WeightedTimedMovingAverage.hpp" />
+    <ClInclude Include="World.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AckRange.cpp" />
+    <ClCompile Include="DeliveryNotificationManager.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectRegistry.cpp" />
+    <ClCompile Include="InFlightPacket.cpp" />
+    <ClCompile Include="InputState.cpp" />
+    <ClCompile Include="MemoryBitStream.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="MoveList.cpp" />
+    <ClCompile Include="NetworkManager.cpp" />
+    <ClCompile Include="Project.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="ProjectMath.cpp" />
+    <ClCompile Include="ProjectPCH.cpp" />
+    <ClCompile Include="ScoreBoardManager.cpp" />
+    <ClCompile Include="SocketAddress.cpp" />
+    <ClCompile Include="SocketAddressFactory.cpp" />
+    <ClCompile Include="SocketUtility.cpp" />
+    <ClCompile Include="StringUtility.cpp" />
+    <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="TCPSocket.cpp" />
+    <ClCompile Include="Timing.cpp" />
+    <ClCompile Include="UDPSocket.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
@@ -47,10 +101,10 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -112,6 +166,9 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>../SFML-2.6.2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ProjectPCH.hpp</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,7 +1,3 @@
-#pragma once
-class ProjectServerPCH
-{};
-
 #include "SharedLibrary.hpp"
 
 #include "ReplicationManagerTransmissionData.hpp"

@@ -24,7 +24,7 @@ void ProjectileServer::Update()
 
 }
 
-bool ProjectileServer::HandleCollisionWithCat(RoboCat* inCat)
+bool ProjectileServer::HandleCollisionWithCat(Project* inCat)
 {
 	if (inCat->GetPlayerId() != GetPlayerId())
 	{
