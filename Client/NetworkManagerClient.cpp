@@ -108,7 +108,12 @@ void NetworkManagerClient::HandleStatePacket(InputMemoryBitStream& inInputStream
 
 		//old
 		//HandleGameObjectState( inPacketBuffer );
-		HandleScoreBoardState(inInputStream);
+		//if the scoreboard didn't read cleanly we're no longer aligned with what the server wrote,
+		//so there's nothing sensible left to hand the replication manager
+		if (!HandleScoreBoardState(inInputStream))
+		{
+			return;
+		}
 
 		//tell the replication manager to handle the rest...
 		mReplicationManagerClient.Read(inInputStream);
@@ -173,9 +178,9 @@ void NetworkManagerClient::HandleGameObjectState(InputMemoryBitStream& inInputSt
 	DestroyGameObjectsInMap(objectsToDestroy);
 }
 
-void NetworkManagerClient::HandleScoreBoardState(InputMemoryBitStream& inInputStream)
+bool NetworkManagerClient::HandleScoreBoardState(InputMemoryBitStream& inInputStream)
 {
-	ScoreBoardManager::sInstance->Read(inInputStream);
+	return ScoreBoardManager::sInstance->Read(inInputStream);
 }
 
 void NetworkManagerClient::DestroyGameObjectsInMap(const IntToGameObjectMap& inObjectsToDestroy)
@@ -214,10 +219,11 @@ void NetworkManagerClient::SendInputPacket()
 
 		mDeliveryNotificationManager.WriteState(inputPacket);
 
-		//we only want to send the last three moves
+		//we only want to send the last three moves- the count goes out in two bits, so sending
+		//four or more would wrap it and the server would read the wrong number of moves back
 		int moveCount = moveList.GetMoveCount();
 		int firstMoveIndex = moveCount - 3;
-		if (firstMoveIndex < 3)
+		if (firstMoveIndex < 0)
 		{
 			firstMoveIndex = 0;
 		}
